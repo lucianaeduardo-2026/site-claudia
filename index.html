@@ -4,132 +4,222 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Claudia Eduardo - Beleza & Terapia Capilar</title>
+<title>Studio Claudia Eduardo</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
 
+/* PALETA */
+:root {
+  --verde: #5F8575;
+  --creme: #F5E6DA;
+  --ouro: #D4AF37;
+  --grafite: #4A4A4A;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--creme);
+  color: var(--grafite);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(95,133,117,0.85), rgba(74,74,74,0.8));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--creme);
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+}
+
+.slogan {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.descricao {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: var(--ouro);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* SEÇÕES */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--verde);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* SERVIÇOS */
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-top: 4px solid var(--ouro);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* GALERIA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 15px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* DEPOIMENTOS */
+.depoimento {
+  background: white;
+  padding: 25px;
+  border-left: 4px solid var(--ouro);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* CTA FINAL */
+.cta {
+  text-align: center;
+  background: var(--verde);
+  color: white;
+  border-radius: 20px;
+  padding: 50px 20px;
+}
+
+.cta .btn {
+  background: var(--ouro);
+}
+
+/* WHATS FLOAT */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  padding: 18px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <header class="hero">
+  <div class="hero-overlay"></div>
 
-  <div class="hero-text">
-    <h1>Beleza com cuidado, acolhimento e resultado real</h1>
-
-    <p>
-      Atendimento personalizado em Belo Horizonte com foco em saúde capilar,
-      estética e bem-estar — no studio ou no conforto da sua casa.
-    </p>
+  <div class="hero-content">
+    <h1>Studio Claudia Eduardo</h1>
+    <p class="slogan">Beleza com cuidado e acolhimento</p>
+    <p class="descricao">Atendimento com hora marcada em ambiente exclusivo em Belo Horizonte</p>
 
     <a href="https://wa.me/5531992358489" class="btn">
-      💬 Agendar pelo WhatsApp
+      Agendar pelo WhatsApp
     </a>
-
-    <span class="urgencia">
-      Atendimento com hora marcada • Vagas limitadas por dia
-    </span>
   </div>
-
-  <div class="hero-img">
-    <img src="images/hero.jpg" alt="Atendimento">
-  </div>
-
 </header>
 
-<section class="como-funciona">
-  <h2>Como funciona o atendimento</h2>
+<!-- SERVIÇOS -->
+<section>
+  <h2>Serviços Premium</h2>
 
-  <div class="passos">
-    <div>
-      <h3>1. Avaliação</h3>
-      <p>Entendo sua necessidade e histórico capilar</p>
-    </div>
-
-    <div>
-      <h3>2. Diagnóstico</h3>
-      <p>Indico o melhor tratamento para você</p>
-    </div>
-
-    <div>
-      <h3>3. Resultado</h3>
-      <p>Você sai cuidada, confiante e orientada</p>
-    </div>
+  <div class="servicos">
+    <div class="card">Corte feminino personalizado</div>
+    <div class="card">Coloração profissional</div>
+    <div class="card">Hidratação profunda</div>
+    <div class="card">Terapia capilar</div>
+    <div class="card">Escova e finalização</div>
+    <div class="card">Maquiagem profissional</div>
   </div>
 </section>
 
-<section class="servicos">
-  <h2>Experiências de cuidado e beleza</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Terapia Capilar</h3>
-      <p>Tratamento completo para saúde dos fios</p>
-    </div>
-
-    <div class="card">
-      <h3>Corte Personalizado</h3>
-      <p>Valorizando seu estilo e formato de rosto</p>
-    </div>
-
-    <div class="card">
-      <h3>Coloração</h3>
-      <p>Cor com técnica e preservação da saúde capilar</p>
-    </div>
-
-    <div class="card">
-      <h3>Hidratação Profunda</h3>
-      <p>Recuperação de brilho e maciez</p>
-    </div>
-
-    <div class="card">
-      <h3>Maquiagem</h3>
-      <p>Realce da sua beleza com elegância</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="galeria-section">
-  <h2>Resultados reais</h2>
+<!-- GALERIA -->
+<section>
+  <h2>Resultados Reais</h2>
 
   <div class="galeria">
-    <img src="image/antes1.jpg">
-    <img src="image/depois1.jpg">
-    <img src="image/cliente1.jpg">
-    <img src="image/cliente2.jpg">
-
+    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250">
+    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
+    <img src="https://images.unsplash.com/photo-1595475038784-bbe439ff41e6">
   </div>
 </section>
 
-<section class="depoimentos">
+<!-- DEPOIMENTOS -->
+<section>
   <h2>Depoimentos</h2>
 
-  <p>
+  <div class="depoimento">
     ⭐⭐⭐⭐⭐ <br><br>
-    "Ambiente acolhedor e atendimento impecável. Meu cabelo nunca esteve tão bonito!"
-  </p>
+    Atendimento impecável, ambiente acolhedor e resultado incrível. Recomendo demais!
+  </div>
+</section>
 
-<p>
-    ⭐⭐⭐⭐⭐ <br><br>
-    "Profissional incrível! Atendimento com carinho e muita qualidade."
-  </p>
+<!-- CTA -->
+<section class="cta">
+  <h2>Agende seu horário</h2>
+  <p>Vagas limitadas por dia • Atendimento com hora marcada</p>
 
+  <a href="https://wa.me/5531992358489" class="btn">
+    Falar no WhatsApp
+  </a>
 </section>
 
 <a href="https://wa.me/5531992358489" class="whatsapp">💬</a>
-
-<!-- FOOTER -->
-<footer>
-  <p>📍 Rua Amianto, 405B - Sagrada Família - Bhte/MG</p>
-  <p>📲 WhatsApp: (31)98923-8411</p>
-</footer>
-
-
-
 
 </body>
 </html>
