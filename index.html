@@ -1,128 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Studio Claudia Eduardo</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
-/* RESET */
+/* PALETA */
+:root {
+  --verde: #5F8575;
+  --creme: #F5E6DA;
+  --ouro: #D4AF37;
+  --grafite: #4A4A4A;
+}
+
+/* BASE */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
-  color: #fff;
-}
-
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(0,0,0,0.8);
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.logo span {
-  display: block;
-  font-size: 12px;
-  color: #aaa;
+  font-family: 'Inter', sans-serif;
+  background: var(--creme);
+  color: var(--grafite);
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
+  height: 85vh;
+  background: linear-gradient(rgba(95,133,117,0.8), rgba(74,74,74,0.6)),
+              url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e") center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('images/bg.jpg') center/cover no-repeat;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  color: var(--creme);
 }
 
 .hero p {
-  margin: 20px 0;
-  color: #ddd;
+  color: var(--creme);
+  margin: 15px 0;
 }
 
 .btn {
-  background: gold;
-  color: #000;
-  padding: 15px 25px;
+  background: var(--ouro);
+  color: white;
+  padding: 14px 28px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
 }
 
-/* SERVIÇOS */
-.servicos {
+/* SEÇÕES */
+section {
   padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: var(--verde);
+}
+
+/* SERVIÇOS CARROSSEL */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .carousel {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 .card {
-  min-width: 280px;
-  background: #1a1a1a;
-  padding: 20px;
+  min-width: 300px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-top: 4px solid var(--ouro);
+}
+
+.card h3 {
+  color: var(--verde);
+}
+
+.prev, .next {
+  background: var(--ouro);
+  border: none;
+  font-size: 22px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* GALERIA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 15px;
+}
+
+.galeria img {
+  width: 100%;
   border-radius: 15px;
 }
 
 /* DEPOIMENTOS */
-.depoimentos {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.grid {
+.depoimentos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
 
-.video video, .video img {
-  width: 100%;
-  border-radius: 12px;
+.depo-card {
+  background: white;
+  padding: 20px;
+  border-left: 4px solid var(--ouro);
+  border-radius: 10px;
 }
 
-/* ANTES E DEPOIS */
-.antes-depois {
-  padding: 80px 20px;
+.depo-card video, .depo-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CTA */
+.cta {
+  background: var(--verde);
+  color: white;
   text-align: center;
+  padding: 60px 20px;
+  border-radius: 20px;
 }
 
-.antes-depois img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* WHATSAPP */
+/* WHATS */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  color: #fff;
-  padding: 15px;
+  padding: 18px;
   border-radius: 50%;
+  color: white;
   text-decoration: none;
-  font-size: 20px;
 }
 
 </style>
@@ -130,79 +160,109 @@ header {
 
 <body>
 
-<header>
-  <div class="logo">
-    Studio Claudia Eduardo
-    <span>Beleza com cuidado e acolhimento</span>
-  </div>
-</header>
-
+<!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Realce sua beleza com cuidado profissional</h1>
-    <p>Atendimento exclusivo em Belo Horizonte</p>
-    <a class="btn" href="https://wa.me/5531999999999?text=Quero%20agendar%20um%20horário">Agendar pelo WhatsApp</a>
+    <h1>Studio Claudia Eduardo</h1>
+    <p>Beleza com cuidado e acolhimento</p>
+    <a href="https://wa.me/5531992358489" class="btn">
+      Agendar pelo WhatsApp
+    </a>
   </div>
 </section>
 
-<section class="servicos">
+<!-- SERVIÇOS -->
+<section>
   <h2>Serviços Premium</h2>
-  <div class="carousel">
 
-    <div class="card">
-      <h3>Cuidados Capilares</h3>
-      <ul>
-        <li>Corte</li>
-        <li>Escova</li>
-        <li>Hidratação</li>
-        <li>Coloração</li>
-        <li>Reconstrução</li>
-        <li>Terapia capilar</li>
-        <li>Avaliação</li>
-      </ul>
+  <div class="carousel-container">
+    <button class="prev">‹</button>
+
+    <div class="carousel" id="carousel">
+
+      <div class="card">
+        <h3>Cuidados Capilares</h3>
+        <ul>
+          <li>Corte</li>
+          <li>Escova</li>
+          <li>Hidratação</li>
+          <li>Coloração</li>
+          <li>Reconstrução</li>
+          <li>Terapia capilar</li>
+          <li>Avaliação</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Maquiagem Profissional</h3>
+        <ul>
+          <li>Design de sobrancelhas</li>
+          <li>Maquiagem express</li>
+          <li>Debutantes</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Maquiagem Profissional</h3>
-      <ul>
-        <li>Design de sobrancelhas</li>
-        <li>Maquiagem express</li>
-        <li>Debutantes</li>
-      </ul>
-    </div>
-
+    <button class="next">›</button>
   </div>
 </section>
 
-<section class="depoimentos">
-  <h2>Depoimentos</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="video">
-        <video controls>
-          <source src="videos/cliente1.mp4">
-        </video>
-      </div>
-      <p>“Atendimento incrível!”</p>
-    </div>
-
-    <div class="card">
-      <div class="video">
-        <img src="images/cliente2.jpg">
-      </div>
-      <p>“Resultado perfeito.”</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="antes-depois">
+<!-- GALERIA -->
+<section>
   <h2>Resultados Reais</h2>
-  <img src="images/antes-depois.jpg">
+
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250">
+    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
+    <img src="https://images.unsplash.com/photo-1595475038784-bbe439ff41e6">
+  </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5531999999999?text=Quero%20agendar">💬</a>
+<!-- DEPOIMENTOS -->
+<section>
+  <h2>Depoimentos</h2>
+
+  <div class="depoimentos-grid">
+
+    <div class="depo-card">
+      <img src="images/cliente1.jpg">
+      <p>“Atendimento incrível e resultado impecável.”</p>
+    </div>
+
+    <div class="depo-card">
+      <video controls>
+        <source src="videos/cliente1.mp4">
+      </video>
+      <p>“Experiência maravilhosa, super recomendo!”</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Agende seu horário</h2>
+  <p>Atendimento com hora marcada • Vagas limitadas</p>
+
+  <a href="https://wa.me/5531992358489" class="btn">
+    Falar no WhatsApp
+  </a>
+</section>
+
+<a href="https://wa.me/5531992358489" class="whatsapp">💬</a>
+
+<script>
+const carousel = document.getElementById('carousel');
+
+document.querySelector('.next').onclick = () => {
+  carousel.scrollBy({ left: 320, behavior: 'smooth' });
+};
+
+document.querySelector('.prev').onclick = () => {
+  carousel.scrollBy({ left: -320, behavior: 'smooth' });
+};
+</script>
 
 </body>
 </html>
